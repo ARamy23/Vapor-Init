@@ -25,7 +25,7 @@ build and run and then go to http://localHost:8080/hello/world
 
 Yep, you guessed it right, this will fire up something exactly like this...
 
-![Swift Cairo ❤](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/swift-cairo.png)
+![Swift Cairo ❤](https://github.com/ARamy23/Today-I-Read/blob/step-2/swift-cairo.png)
 
 
 
@@ -45,7 +45,7 @@ router.get("hello", String.parameter) { req in
 
 
 
-![hello, Instabug!](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/hello, Instabug!.png)
+![hello, Instabug! 🐞](https://github.com/ARamy23/Today-I-Read/blob/step-2/hello%2C%20Instabug!.png)
 
 
 
@@ -115,7 +115,7 @@ router.post(SwiftyCairoer.self, at: "swiftydude") { req, data -> String in
 
 build and run then fire up `Postman`!
 
-![postman](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/postman.png)
+![postman](https://github.com/ARamy23/Today-I-Read/blob/step-2/postman.png)
 
 okay but what if we wanted to receieve JSON instead?
 
@@ -131,7 +131,7 @@ router.post(SwiftyCairoer.self, at: "jsondude") { req, data -> String in
 
 then we should expect something like this 
 
-![postman json](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/postman json.png)
+![postman json](https://github.com/ARamy23/Today-I-Read/blob/step-2/postman%20json.png)
 
 
 
