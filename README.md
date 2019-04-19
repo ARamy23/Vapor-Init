@@ -40,7 +40,7 @@ Now to the installing part
 
 
 
-![uncle](https://github.com/ARamy23/Today-I-Read/blob/step-1/great powers, great responsibilities.png)
+![](https://github.com/ARamy23/Today-I-Read/blob/step-1/great%20powers%2C%20great%20responsibilities.png)
 
 
 
@@ -65,7 +65,7 @@ run here fires up the system, if you tried to open your browser on the following
 
 you should expect something like this
 
-![hello, world](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello, world!.png)
+![hello, world](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello%2C%20world!.png)
 
 but if you open up the file directory where you created the project at, 
 you won't find any xcode project file to run and actually work with the files you may find in the project...
