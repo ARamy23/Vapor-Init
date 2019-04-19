@@ -2,7 +2,27 @@
 
 To begin your first Server-side project, you need to earn the powers to take your Swift up and above!
 
-fire up your favorite terminal and...
+To earn those powers we need to know if you're WORTHY
+
+fire up your favorite terminal, but...
+
+
+
+# Mr. Eval here will see if you're
+
+`eval "$(curl -sL check.vapor.sh)"`
+
+you should end up with something like this...
+
+![](https://github.com/ARamy23/Today-I-Read/blob/step-1/checkpoint.png)
+
+
+
+If you end up with something like this, you are ready to use Vapor and install it, if not, you gonna have to update your Xcode
+
+
+
+Now to the installing part
 
 
 
@@ -16,35 +36,11 @@ fire up your favorite terminal and...
 
 
 
-
-
-> ### *or if you are on Linux...*
-
-
-
-# Behold the power of Curl!
-
-
-
-`eval "$(curl -sL check.vapor.sh)"`
-
-
-
-you should end up with something like this...
-
-![](https://github.com/ARamy23/Today-I-Read/blob/step-1/checkpoint.png)
-
-
-
-------
-
-
-
 #### Now that you've earned the powers of Vapor, you need to deserve them...
 
 
 
-![image-20190417155457599](https://github.com/ARamy23/Today-I-Read/blob/step-1/great powers, great responsibilities.png)
+![](https://github.com/ARamy23/Today-I-Read/blob/step-1/great powers, great responsibilities.png)
 
 
 
@@ -55,7 +51,7 @@ you should end up with something like this...
 In the directory of your choice, make a directory and type the following command
 
 `mkdir ~/{Your selectedPath}`
-`vapor new TIR`  # TIR stands for Today I read
+`vapor new TIR` 
 
 `cd TIR`
 
@@ -69,7 +65,7 @@ run here fires up the system, if you tried to open your browser on the following
 
 you should expect something like this
 
-![image-20190417160123709](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello, world!.png)
+![](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello, world!.png)
 
 but if you open up the file directory where you created the project at, 
 you won't find any xcode project file to run and actually work with the files you may find in the project...
