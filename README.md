@@ -63,6 +63,8 @@ What this does here is creating the project for you, you can specify templates t
 
 run here fires up the system, if you tried to open your browser on the following localHost path
 
+http://localhost:8080/hello
+
 you should expect something like this
 
 ![hello, world](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello%2C%20world!.png)
