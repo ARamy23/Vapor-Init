@@ -16,6 +16,8 @@ fire up your favorite terminal and...
 
 
 
+
+
 > ### *or if you are on Linux...*
 
 
@@ -30,7 +32,7 @@ fire up your favorite terminal and...
 
 you should end up with something like this...
 
-![image-20190417154904302](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/checkpoint.png)
+![image-20190417154904302](Today-I-Read/checkpoint.png)
 
 
 
