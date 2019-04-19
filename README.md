@@ -32,7 +32,7 @@ fire up your favorite terminal and...
 
 you should end up with something like this...
 
-![image-20190417154904302](Today-I-Read/checkpoint.png)
+![](https://github.com/ARamy23/Today-I-Read/blob/step-1/checkpoint.png)
 
 
 
@@ -44,7 +44,7 @@ you should end up with something like this...
 
 
 
-![image-20190417155457599](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/great powers, great responsibilities.png)
+![image-20190417155457599](https://github.com/ARamy23/Today-I-Read/blob/step-1/great powers, great responsibilities.png)
 
 
 
@@ -69,7 +69,7 @@ run here fires up the system, if you tried to open your browser on the following
 
 you should expect something like this
 
-![image-20190417160123709](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/hello, world!.png)
+![image-20190417160123709](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello, world!.png)
 
 but if you open up the file directory where you created the project at, 
 you won't find any xcode project file to run and actually work with the files you may find in the project...
