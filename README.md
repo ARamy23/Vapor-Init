@@ -14,7 +14,7 @@ fire up your favorite terminal, but...
 
 you should end up with something like this...
 
-![](https://github.com/ARamy23/Today-I-Read/blob/step-1/checkpoint.png)
+![should be fine](https://github.com/ARamy23/Today-I-Read/blob/step-1/checkpoint.png)
 
 
 
@@ -40,7 +40,7 @@ Now to the installing part
 
 
 
-![](https://github.com/ARamy23/Today-I-Read/blob/step-1/great powers, great responsibilities.png)
+![uncle](https://github.com/ARamy23/Today-I-Read/blob/step-1/great powers, great responsibilities.png)
 
 
 
@@ -65,7 +65,7 @@ run here fires up the system, if you tried to open your browser on the following
 
 you should expect something like this
 
-![](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello, world!.png)
+![hello, world](https://github.com/ARamy23/Today-I-Read/blob/step-1/hello, world!.png)
 
 but if you open up the file directory where you created the project at, 
 you won't find any xcode project file to run and actually work with the files you may find in the project...
