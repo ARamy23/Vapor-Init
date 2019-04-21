@@ -1,0 +1,96 @@
+title: The Return on Investment of getting uncomfortable
+Body: A lot of us has their own technical stack which they are comfortable with, where they feel productive in, where they feel Safe.
+
+The Problem
+Coming from an iOS background where my usual programming language is Swift, I feel so comfortable building iOS apps and handle most of their problems. 
+At first, iOS fulfilled my hunger for learning where everyday you solve new problems and learn about new topics such as design patterns, using Architectures, experimenting in couple of apps with what I learn and try to apply Clean Code as much as I can. 
+Now after a while, I began to become bored a bit, so I decided to learn more about the backend side of things, what goes on behind the GET requests we send to the Backend and how they process our requests and respond to us with JSON where we parse to serve our users.
+
+so without hesitating, I started to read in that direction. and here is my Journey.
+
+The Journey
+I wanted to learn more about how backend people think, how do they approach their problems and the nature of their problems and how do they react to each one, how do they build stuff to ensure quality, maintainability and most importantly, Scalability. 
+at that time I read about a couple of frameworks written in Swift which enables Swift developers to write server-side code, i tried Kitura, Perfect and Vapor. 
+I settled down with Vapor since I enjoyed the way code is written, especially after finding that it allows one to write more Functional Code and learn advanced features about the Swift language. 
+I was glad that I found something like Vapor which enables one to write Swift code to do Backend, learn advanced stuff like Protocol Oriented Programming, Discover more ways to do functional programming and improve the way I handle errors and use more functions that `throws`.
+
+so it was such a great learning opportunity that I couldn’t resist not to embrace and here is what I gained…
+
+The Gain
+1. Now I can build basic web application and create RESTful APIs
+2. Learn SQL and PostgreSQL and dealing with Databases
+3. Setup Different Environments using Docker and use them for their purposes
+4. Improve on my code writing skills to write more testable code and add on my knowledge in writing more Clean-Code
+5. Improve my mocking skills to mock in-coming requests and out-going responses
+6. get exposed to more problems that require higher problem solving skills and how to solve them
+7. learn more about new language features like using `KeyPaths` 
+8. learn more about MVC pattern from a Backend Perspective
+9. how to do a migration to database models
+
+So let’s discuss the gains and how it affected me as an iOS Developer
+
+Building basic web applications and creating RESTful APIs
+To me building APIs which can talk to my first application was such a satisfying and a fulfilling experience! 
+and as soon as I achieved that, I automatically wanted to do more of this! and I wanted to go to the next level and persist the data that am creating without filling it up each time, so…
+
+I learned SQL and PostgreSQL
+and I learned how to setup a database to store my data which was a simple model consisting of Articles which have titles, contents and a brief 200 word character of the article to display to on the iOS App to the users to see, after a while I had to test my logic and make sure that adding new features won’t cause any backward compatibility, so I had to…
+
+Setup Different Environments using Docker
+in scalable applications, we usually have applications that uses development environment, production environment and testing environment so I had to setup two containers in docker, one for production and one for testing, 
+of course I had to improve the code i wrote my basic APIs with to be testable enough and thus I…
+
+I improved my mocking skills
+In order to test my code which responds to incoming POSTS and save data to my database no matter what the environment I had to first mock the process of receiving requests and do operations on it and test if the response is doing the correct things
+
+so after testing my basic CRUD API, I wanted to implement a search feature which look up articles from the searchKey entered by the user, which got me…
+
+Exposed to more problems that called upon my problem-solving skills
+
+
+So, my first try was to query on all the articles and see if it contained the searchKey am passing in the GET request
+then I also wanted to add categories to the articles in the database and also make the user be able to search by category and if a category matches or contains the searchKey, it displays all the articles of that category
+
+luckily the tests was able to guide me if the search was working and the extension to make it able to search by category also was green
+
+sadly it was not the best optimized thing to do since getting all the articles and filter them according to a keyword was not the best thing 
+so I learned about Fluent (A wrapper around SQL querying syntax) and managed to get articles from the searchKey with an acceptable performance benchmark 
+but however the search by category wasn’t 
+so, I read and asked people about how this is usually done, and the answer was `join(from:to:)` 
+what join do is basically leave a reference from one entity in a table, in another table, and it really boosted the search feature bench marks using categories, but in order to implement it correctly, I had to…
+
+Learn more about Swift features like `KeyPaths`
+the idea of join is built about both model entities have ids of their siblings, parents depending on their relation with each other
+In my case, it was a many-to-many relation and setting up the relation was kinda tricky and hard to find reference to it but I managed to do it in the end, and it was mainly centered about `KeyPaths`, if you don’t know what a `KeyPath` is, you might find this article helpful in explaining it 
+So, you setup your relations and when doing the filter, you want to specify the search to look for categories names and if the searchKey matches one, you join the category with the articles query and let Fluent do the magic!
+
+later on, I found out that my files are getting larger and the file that was supposed to handle the routes that the server has and can deal with is getting large and outta hands quickly…
+
+So, then I was introduced to what is called…
+
+MVC pattern from a Backend Perspective
+It’s a bit similar to our version of the MVC pattern in iOS
+but In my case where i was just building RESTful APIs, there were no views (Websites), but I learned how to organize my code and separate it to avoid monolith files that frustrates anyone who has to modify things in, so I created APIControllers which holds the routing, their security and logic handling and expose the routes to the routes handler 
+which in return, made my code more organized, more separated and most importantly, more maintainable! 
+And now that you ensured that your code is written more cleanly and you got effective tests that got your back, why not add more features or expand my models a little bit?
+
+sadly doing so resulted in a serious bug which am glad that I encountered early on and learned some techniques to handle it, which was…
+
+How to do a migration to database models
+Migration is the process of editing the models you are storing in the database while keeping the integrity of your data in the database
+basically you can’t just go on a production environment and deleting a column or adding a new one, that would cause catastrophic results sadly that what I was expecting, that I’d just add more properties to my model and remove ones and somehow my database would understand the changes and apply it Automagically.
+
+
+
+sadly, it struck me really hard when i was applying new code and expecting it to do a required output and suddenly all the data returning was returning the old JSON structure 
+so, to keep my data’s integrity, I had to write some logic for the database to migrate the old data in the old database schema to the new one
+
+and that sums up my Journey in learning some tiny bits of doing Backend to build applications and how it reflected on me and my knowledge level as a developer in general and added up to my knowledge in Swift!
+ 
+some of my old mentors were not agreeing with me on this move, they thought (me included at first) that it would be a better use of time to learn more about swift, and engage in Open-source contributions and read more about design patterns, architectures and read more in that direction which i was already doing, but here is my opinion about the whole experiment and what I believe in…
+
+Like learning new human languages, you don’t just learn syntax or how letters are written or pronounced, you learn culture and new ways to think and expand your knowledge, so when you face a problem in iOS, and you know more than iOS, you have better Points of view and have more knowledge to help you come up with a solution better and faster than someone who only knows iOS
+Conclusion 
+Learn and work on yourself, don’t be afraid of trying new things, trust me, they all add to each other directly and in-directly
+never be afraid of learning new stuff and building things when you have no idea how this is built.
+worry less, do more!
