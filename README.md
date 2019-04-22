@@ -444,3 +444,98 @@ now go to your terminal and execute the following command
 
 ![routes check2](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/routes check2.png)
 
+
+
+so like read, I'll quickly implement update and delete and then we can test them all out!
+
+### Update
+
+below `getHandler(_:Request)`, add the following function
+
+```swift
+func updateHandler(_ req: Request) throws -> Future<Article> {
+  return try flatMap( // 1 ~> we create a future
+    to: Article.self, // 2 ~> we map it to the type `Article`
+    req // 3 ~> we grab the request
+    .parameters // 3.1 ~> cut it down to get the parameter with the id given as a URL parameter (...articles/`1`)
+    .next(Article.self), // 3.2 ~> we map that parameter into the Article type
+    req // 4 ~> then we get...
+    .content // 4.1 ~> the request body that contains a type
+    .decode(Article.self), // 4.2 ~> then we decode that type into an Article
+    	{ oldArticle, updatedArticle in // 5 ~> now we have old and new articles
+       	oldArticle.title = updatedArticle.title // 6 ~> Map new to old
+       	oldArticle.body = updatedArticle.body // still mapping...
+       	return oldArticle.save(on: req) // 7 ~> save the old article (after modification) to DB
+  	})
+}
+```
+
+
+
+then register the update handler to the routes by using the `PUT` httpMethod
+
+so we are going to say something our `getHandler` route, which is...
+
+```swift
+articlesRoutes.put(Article.parameter, use: updateHandler)
+```
+
+
+
+next thing is to make sure that our app sees our new update route by running the following command in the terminal
+
+`vapor build && vapor run routes`
+
+and you should be seeing the following table of routes
+
+![routes check 3](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/routes check 3.png)
+
+
+
+To finish our basic CRUD, we're going to write our final API in this step which is...
+
+
+
+### Delete
+
+
+
+now that our app supports editing, reading and creating articles, why don't we also add deleting articles to it?
+
+
+
+go ahead and add the final function to the end of your **ArticlesController.swift** 
+
+
+
+```swift
+func deleteHandler(_ req: Request) throws -> Future<HTTPStatus> {
+		return try req // 1 ~> we grab the request
+    		.parameters // 2 ~> we cut it down to get the parameter (...articles/`1`)
+        .next(Article.self) // 3 ~> we map that parameter into the Article type
+        .delete(on: req) // 4 ~> DELETE IT!
+        .transform(to: .noContent) // 5 ~> reply with statusCode `204` meaning that 
+  			// noContent and it's been deleted (not to be mistaken with 404)
+}
+```
+
+
+
+now we have to register the delete route so that it doesn't trigger a `404` upon using that route
+
+```swift
+articlesRoutes.put(Article.parameter, use: updateHandler)
+```
+
+make sure that our app sees our new update route by running the following command in the terminal
+
+`vapor build && vapor run routes`
+
+and make sure you're enjoying that view of a fully fledged API ready to be connected to your iOS App!
+
+![routes check 4](/Users/ahmedramy/Desktop/Workstation/iOS/Today-I-Read/routes check 4.png)
+
+
+
+### Aaaand that's all folks!
+

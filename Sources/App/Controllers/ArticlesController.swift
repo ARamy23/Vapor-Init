@@ -19,6 +19,12 @@ struct ArticlesController: RouteCollection {
         // Read
         articlesRoutes.get(use: getAllHandler)
         articlesRoutes.get(Article.parameter, use: getHandler)
+        
+        // Update
+        articlesRoutes.put(Article.parameter, use: updateHandler)
+        
+        // Delete
+        articlesRoutes.delete(Article.parameter, use: deleteHandler)
     }
     
     /// creates articles and saves them
@@ -50,5 +56,29 @@ struct ArticlesController: RouteCollection {
         return try req // 1 ~> We take the request
             .parameters // 2 ~> we cut it down and get the parameter (...articles/`1`)
             .next(Article.self) // 3 ~> we map that parameter into the Article type
+    }
+    
+    func updateHandler(_ req: Request) throws -> Future<Article> {
+        return try flatMap( // 1 ~> we create a future
+            to: Article.self, // 2 ~> we map it to the type `Article`
+            req // 3 ~> we grab the request
+                .parameters // 3.1 ~> cut it down to get the parameter with the id given as a URL parameter (...articles/`1`)
+                .next(Article.self), // 3.2 ~> we map that parameter into the Article type
+            req // 4 ~> then we get...
+                .content // 4.1 ~> the request body that contains a type
+                .decode(Article.self), // 4.2 ~> then we decode that type into an Article
+            { oldArticle, updatedArticle in // 5 ~> now we have old and new articles
+                oldArticle.title = updatedArticle.title // 6 ~> Map new to old
+                oldArticle.body = updatedArticle.body // still mapping...
+                return oldArticle.save(on: req) // 7 ~> save the old article (after modification) to DB
+        })
+    }
+    
+    func deleteHandler(_ req: Request) throws -> Future<HTTPStatus> {
+        return try req // 1 ~> we grab the request
+            .parameters // 2 ~> we cut it down to get the parameter (...articles/`1`)
+            .next(Article.self) // 3 ~> we map that parameter into the Article type
+            .delete(on: req) // 4 ~> DELETE IT!
+            .transform(to: .noContent) // 5 ~> reply with statusCode `204` meaning that noContent and it's been deleted (not to be mistaken with 404)
     }
 }
