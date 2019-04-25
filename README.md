@@ -1,20 +1,26 @@
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/1342803/36623515-7293b4ec-18d3-11e8-85ab-4e2f8fb38fbd.png" width="320" alt="API Template">
-    <br>
-    <br>
-    <a href="http://docs.vapor.codes/3.0/">
-        <img src="http://img.shields.io/badge/read_the-docs-2196f3.svg" alt="Documentation">
-    </a>
-    <a href="https://discord.gg/vapor">
-        <img src="https://img.shields.io/discord/431917998102675485.svg" alt="Team Chat">
-    </a>
-    <a href="LICENSE">
-        <img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT License">
-    </a>
-    <a href="https://circleci.com/gh/vapor/api-template">
-        <img src="https://circleci.com/gh/vapor/api-template.svg?style=shield" alt="Continuous Integration">
-    </a>
-    <a href="https://swift.org">
-        <img src="http://img.shields.io/badge/swift-4.1-brightgreen.svg" alt="Swift 4.1">
-    </a>
-</p>
+# 👾 Meetup Repo to create a demo of the power of server-side swift using Vapor framework 👾
+
+
+
+### Hi!
+
+### So about this repo, this is a repo which is made as a follow-up to Swift-Cairo's meetup where we talked about Vapor a bit to give you more info about Vapor and a small tutorial
+
+### So, here in the master branch you will find...
+
+### 1. the keynote used in the presentation which includes references to the resources used in the slides
+
+### 2. the code of the project used 
+
+### 3. the iOS App which was used in the demo to contact the localHost and display some data 
+
+
+
+### If you're interested in knowing more about Vapor through tutorials...
+
+### you can check my tutorial about it through checking-out to `step-1` branch in this repo and following the tutorial
+
+### Or checking out Ray Wenderlich's book 
+
+### Or checking out the following series presented by Martin Lasik
+
